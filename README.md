@@ -1,6 +1,6 @@
 # io_scene_cmb
 
- WIP Blender add-on to Import Grezzo's "Ctr Mode Binary (.cmb)"
+ WIP Blender add-on to Import Grezzo's "**C**tr **M**odel **B**inary (.cmb)"
  
  Currently only support blender 2.79 but support for 2.8 is planned
  
