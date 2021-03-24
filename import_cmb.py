@@ -48,7 +48,7 @@ def LoadModel(filepath):
             # Save the matrices so we don't have to recalculate them for single-binded meshes later
             boneTransforms[bone.id] = getWorldTransform(cmb.skeleton, bone.id)
 
-            eb = skeleton.edit_bones.new(f"bone_{bone.id}")
+            eb = skeleton.edit_bones.new('bone_{}'.format(bone.id))
             eb.use_inherit_scale = eb.use_inherit_rotation = eb.use_deform = True# Inherit rotation/scale and use deform
             eb.head = bone.translation# Set head position
             eb.matrix = boneTransforms[bone.id].transposed()# Apply matrix
@@ -85,7 +85,7 @@ def LoadModel(filepath):
 
         #TODO: Mimic materials best as possible
         for m in cmb.materials:
-            mat = bpy.data.materials.new(f"{cmb.name}_mat")# Create new material
+            mat = bpy.data.materials.new('{}_mat'.format(cmb.name))# Create new material
             mat.use_nodes = True# Use nodes
             materialNames.append(mat.name)
             
@@ -123,7 +123,7 @@ def LoadModel(filepath):
             hasBw  = getFlag(shape.vertFlags, 7, inc)
 
             # Create new mesh
-            nmesh = bpy.data.meshes.new(f"VisID:{mesh.ID}")# ID is used for visibility animations
+            nmesh = bpy.data.meshes.new('VisID:{}'.format(mesh.ID))# ID is used for visibility animations
             nmesh.use_auto_smooth = True# Needed for custom split normals
             nmesh.materials.append(bpy.data.materials.get(materialNames[mesh.materialIndex]))# Add material to mesh
             

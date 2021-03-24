@@ -1,13 +1,13 @@
-from enum import IntFlag
+from enum import IntEnum
 
-class CmbVersion(IntFlag):
+class CmbVersion(IntEnum):
     # Not literally an enum for the game, just more informative
     OoT3D = 6,     # Ocarina of Time: 3D
     MM3D = 10,     # Majora's Mask: 3D
     EverOasis = 12,# Ever Oasis
     LM3D = 15      # Luigi's Mansion: 3D
 
-class GLTextureFormat(IntFlag):
+class GLTextureFormat(IntEnum):
     RGB8 = 0x14016754,
     RGBA8 = 0x14016752,
     RGBA5551 = 0x80346752,
@@ -25,7 +25,7 @@ class GLTextureFormat(IntFlag):
     #ETC1 = 0x1401675A,
     #ETC1a4 = 0x1401675B
 
-class DataTypes(IntFlag):
+class DataTypes(IntEnum):
     Byte = 0x1400,
     UByte = 0x1401,
     Short = 0x1402,
@@ -34,7 +34,7 @@ class DataTypes(IntFlag):
     UInt = 0x1405,
     Float = 0x1406
 
-class TestFunc(IntFlag):
+class TestFunc(IntEnum):
     Never = 512,
     Less = 513,
     Equal = 514,
@@ -44,36 +44,36 @@ class TestFunc(IntFlag):
     Gequal = 518,
     Always = 519
 
-class CullMode(IntFlag):
+class CullMode(IntEnum):
     FrontAndBack = 0,
     Front = 1,
     BackFace = 2,
     Never = 3
 
-class BumpMode(IntFlag):
+class BumpMode(IntEnum):
     NotUsed   = 25288,
     AsBump    = 25289,
     AsTangent = 25290# Doesn't exist in OoT3D
 
-class BumpTexture(IntFlag):
+class BumpTexture(IntEnum):
     Texture0 = 0x84C0,
     Texture1 = 0x84C0,
     Texture2 = 0x84C0
 
-class BlendEquation(IntFlag):
+class BlendEquation(IntEnum):
     FuncAdd = 0x8006,
     FuncSubtract = 0x800A,
     FuncReverseSubtract = 0x800B,
     Min = 0x8007,
     Max = 0x8008
 
-class BlendMode(IntFlag):
+class BlendMode(IntEnum):
     BlendNone = 0,
     Blend = 1,
     BlendSeparate = 2,
     LogicalOp = 3
 
-class BlendFactor(IntFlag):
+class BlendFactor(IntEnum):
     Zero = 0,
     One = 1,
     SourceColor = 768,
@@ -90,7 +90,7 @@ class BlendFactor(IntFlag):
     OneMinusConstantAlpha = 32772,
     SourceAlphaSaturate = 776
 
-class TexCombineMode(IntFlag):
+class TexCombineMode(IntEnum):
     Replace = 0x1E01,
     Modulate = 0x2100,
     Add = 0x0104,
@@ -102,12 +102,12 @@ class TexCombineMode(IntFlag):
     MultAdd = 0x6401,
     AddMult = 0x6402
 
-class TexCombineScale(IntFlag):
+class TexCombineScale(IntEnum):
     One = 1,
     Two = 2,
     Four = 4
 
-class TexCombinerSource(IntFlag):
+class TexCombinerSource(IntEnum):
     PrimaryColor = 0x8577,
     FragmentPrimaryColor = 0x6210,
     FragmentSecondaryColor = 0x6211,
@@ -119,7 +119,7 @@ class TexCombinerSource(IntFlag):
     Constant = 0x8576,
     Previous = 0x8578
 
-class TexCombinerColorOp(IntFlag):
+class TexCombinerColorOp(IntEnum):
     Color = 0x0300,
     OneMinusColor = 0x0301,
     Alpha = 0x0302,
@@ -131,7 +131,7 @@ class TexCombinerColorOp(IntFlag):
     Blue = 0x8582,
     OneMinusBlue = 0x8585
 
-class TexCombinerAlphaOp(IntFlag):
+class TexCombinerAlphaOp(IntEnum):
     Alpha = 0x0302,
     OneMinusAlpha = 0x0303,
     Red = 0x8580,
@@ -141,7 +141,7 @@ class TexCombinerAlphaOp(IntFlag):
     Blue = 0x8582,
     OneMinusBlue = 0x8585
 
-class TextureMinFilter(IntFlag):
+class TextureMinFilter(IntEnum):
     Nearest = 0x2600,
     Linear = 0x2601,
     NearestMipmapNearest = 0x2700,
@@ -149,29 +149,29 @@ class TextureMinFilter(IntFlag):
     NearestMipmapLinear = 0x2702,
     LinearMipmapLinear = 0x2703
 
-class TextureMagFilter(IntFlag):
+class TextureMagFilter(IntEnum):
     Nearest = 0x2600,
     Linear = 0x2601,
 
-class TextureWrapMode(IntFlag):
+class TextureWrapMode(IntEnum):
     ClampToBorder = 0x2900,
     Repeat = 0x2901,
     ClampToEdge = 0x812F,
     Mirror = 0x8370
 
-class TextureMappingType(IntFlag):
+class TextureMappingType(IntEnum):
     Empty = 0,
     UvCoordinateMap = 1,
     CameraCubeEnvMap = 2,
     CameraSphereEnvMap = 3,
     ProjectionMap = 4
 
-class TextureMatrixMode(IntFlag):
+class TextureMatrixMode(IntEnum):
     DccMaya = 0,
     DccSoftImage = 1,
     Dcc3dsMax = 2
 
-class LutInput(IntFlag):
+class LutInput(IntEnum):
     CosNormalHalf = 25248,
     CosViewHalf = 25249,
     CosNormalView = 25250,
@@ -179,7 +179,7 @@ class LutInput(IntFlag):
     CosLightSpot = 25252,
     CosPhi = 25253
 
-class LayerConfig(IntFlag):
+class LayerConfig(IntEnum):
     LayerConfig0 = 25264,
     LayerConfig1 = 25265,
     LayerConfig2 = 25266,
@@ -189,13 +189,13 @@ class LayerConfig(IntFlag):
     LayerConfig6 = 25270,
     LayerConfig7 = 25271
 
-class FresnelConfig(IntFlag):
-	No = 0,
-	Pri = 1,
-	Sec = 2,
-	PriSec = 3
+class FresnelConfig(IntEnum):
+	No = 25280,
+	Pri = 25281,
+	Sec = 25282,
+	PriSec = 25283
 
-class StencilTestOp(IntFlag):
+class StencilTestOp(IntEnum):
     Keep = 7680,
     Zero = 0,
     Replace = 7681,
@@ -205,16 +205,16 @@ class StencilTestOp(IntFlag):
     IncrementWrap = 34055,
     DecrementWrap = 34055
 
-class VertexAttributeMode(IntFlag):
+class VertexAttributeMode(IntEnum):
     Array = 0,
     Constant = 1,
 
-class SkinningMode(IntFlag):
+class SkinningMode(IntEnum):
     Single = 0,
     Rigid = 1,
     Smooth = 2,
 
-class PrimitiveMode(IntFlag):
+class PrimitiveMode(IntEnum):
     Triangles = 0,
     TriangleStrip = 1,
     TriangleFan = 2,
