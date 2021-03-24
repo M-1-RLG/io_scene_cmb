@@ -29,7 +29,7 @@ class ImportCmb(bpy.types.Operator, ImportHelper):
     
     
     def execute( self, context ):
-        from .Import_cmb import load_cmb
+        from .import_cmb import load_cmb
         return load_cmb(self, context)
 
 

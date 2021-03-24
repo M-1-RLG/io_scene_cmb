@@ -1,7 +1,7 @@
 import struct
 import math
 import mathutils
-from .CmbEnums import DataTypes
+from .cmbEnums import DataTypes
 
 def getFlag(value, index, increment):
     index += increment

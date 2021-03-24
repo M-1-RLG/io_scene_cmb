@@ -1,8 +1,8 @@
 import sys, os
-from .Utils import (align, readDataType, readString, readArray, readFloat, 
+from .utils import (align, readDataType, readString, readArray, readFloat, 
                     readUInt32, readInt32, readUShort, 
                     readShort, readByte, readUByte)
-from .CmbEnums import *
+from .cmbEnums import *
 
 Version = CmbVersion.OoT3D
 

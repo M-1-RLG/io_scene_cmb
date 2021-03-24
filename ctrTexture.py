@@ -1,5 +1,5 @@
 import struct, array
-from .CmbEnums import GLTextureFormat
+from .cmbEnums import GLTextureFormat
 #Ported from SPICA (https://github.com/gdkchan/SPICA)
 
 SwizzleLUT = (

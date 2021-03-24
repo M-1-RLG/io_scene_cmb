@@ -1,9 +1,9 @@
 import sys, os, array, bpy, bmesh, operator, math, mathutils
 
-from .Cmb import readCmb
-from .CtrTexture import DecodeBuffer
-from .CmbEnums import SkinningMode, DataTypes
-from .Utils import (readArray, readDataType, getFlag, getDataTypeSize,
+from .cmb import readCmb
+from .ctrTexture import DecodeBuffer
+from .cmbEnums import SkinningMode, DataTypes
+from .utils import (readArray, readDataType, getFlag, getDataTypeSize,
                     getWorldTransform, transformPosition, transformNormal)
 
 #TODO: Clean up
