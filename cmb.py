@@ -654,17 +654,17 @@ class Mshs(object):
     def __init__(self):
         self.magic = "mshs"#MeSHeS
         self.chunkSize = 16
-        # Note: Meshes are sorted in a specific way
+        # Note: Mesh order = draw order
         self.meshCount = 0
-        self.unkMeshCount = 0#Maybe "OpaqueMeshCount" and the rest are "Translucent"?
-        self.idCount = 1# MeshNodeNameID
+        self.OpaqueMeshCount = 0# The remainder are translucent meshes and always packed at the end
+        self.idCount = 1# MeshNodeNameCount
         self.meshes = []
 
     def read(self,f):
         self.magic = readString(f, 4)
         self.chunkSize = readUInt32(f)
         self.meshCount = readUInt32(f)
-        self.unkMeshCount = readUShort(f)
+        self.OpaqueMeshCount = readUShort(f)
         self.idCount = readUShort(f)
         self.meshes = [Mesh().read(f) for _ in range(self.meshCount)]
         return self
