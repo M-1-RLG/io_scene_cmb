@@ -14,7 +14,8 @@ class GLTextureFormat(IntEnum):
     RGB565 = 0x83636754,
     RGBA4444 = 0x80336752,
     LA8 = 0x14016758,
-    HILO8 = 0x14016759,# TODO: Test
+    Gas = 0x00006050
+    HiLo8 = 0x14016759,# TODO: Test
     L8 = 0x14016757,
     A8 = 0x14016756,
     LA4 = 0x67606758,
@@ -22,6 +23,7 @@ class GLTextureFormat(IntEnum):
     A4 = 0x67616756,
     ETC1 = 0x0000675A or 0x1401675A,
     ETC1a4 = 0x0000675B or 0x1401675B,
+    Shadow = 0x00006040
     #ETC1 = 0x1401675A,
     #ETC1a4 = 0x1401675B
 
@@ -35,6 +37,7 @@ class DataTypes(IntEnum):
     Float = 0x1406
 
 class TestFunc(IntEnum):
+    Invalid = 0,
     Never = 512,
     Less = 513,
     Equal = 514,

@@ -309,6 +309,11 @@ def DecodeBuffer(Input, width, height, format, isETC1):
                         Output[OOffs + 1] = 0xff
                         Output[OOffs + 2] = 0xff
                         Output[OOffs + 3] = ((A << 4) | A)
+                    elif(format == GLTextureFormat.Gas or format == GLTextureFormat.Shadow):
+                        Output[OOffs + 0] = Input[IOffs]
+                        Output[OOffs + 1] = Input[IOffs]
+                        Output[OOffs + 2] = Input[IOffs]
+                        Output[OOffs + 3] = 0xff
                         
                     #Convert to float for blender
                     Output[OOffs + 0] /= 255
