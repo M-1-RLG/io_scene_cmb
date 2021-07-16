@@ -174,7 +174,8 @@ def LoadModel(filepath):
                 # Color
                 if hasClr:
                     f.seek(cmb.vatrOfs + vb.color.startOfs + shape.color.start + 4 * getDataTypeSize(shape.color.dataType) * i)
-                    v.clr = [e * shape.color.scale for e in readArray(f, 4, shape.color.dataType)]
+                    elements = 3 if bpy.app.version < (2, 80, 0) else 4
+                    v.clr = [e * shape.color.scale for e in readArray(f, elements, shape.color.dataType)]
 
                 # UV0
                 if hasUv0:
